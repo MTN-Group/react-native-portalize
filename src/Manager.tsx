@@ -51,5 +51,5 @@ export const Manager = React.forwardRef((_, ref): any => {
     >
       {portals[0]}
     </View>
-  ));
+  );
 });
