@@ -35,7 +35,7 @@ export const Manager = React.forwardRef((_, ref): any => {
 
       unmount(key: string): void {
         console.log(route.name);
-        if (route.name !== "ProfileTab")
+        if (route.name === "LoginDetails")
           setPortals(prev => prev.filter(item => item.key !== key));
       },
     }),
