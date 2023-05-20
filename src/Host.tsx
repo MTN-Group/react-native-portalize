@@ -15,6 +15,8 @@ export interface IProvider {
   unmount(key?: string): void;
 }
 
+export const globalKey = null;
+
 export const Context = React.createContext<IProvider | null>(null);
 
 export const Host = ({ children, style }: IHostProps): JSX.Element => {
@@ -47,7 +49,9 @@ export const Host = ({ children, style }: IHostProps): JSX.Element => {
   }, []);
 
   const mount = (children: React.ReactNode): string => {
-    export const key = generateKey();
+    const key = generateKey();
+  
+    globalKey = key;
 
     if (managerRef.current) {
       managerRef.current.mount(key, children);
