@@ -16,6 +16,7 @@ export const Manager = React.forwardRef((_, ref): any => {
     ref,
     (): IManagerHandles => ({
       mount(key: string, children: React.ReactNode): void {
+        console.log(route.name);
         if (route.name === "Profile")
           setPortals(prev => [...prev, { key, children }]);
       },
@@ -33,6 +34,7 @@ export const Manager = React.forwardRef((_, ref): any => {
       },
 
       unmount(key: string): void {
+        console.log(route.name);
         if (route.name !== "Profile")
           setPortals(prev => prev.filter(item => item.key !== key));
       },
