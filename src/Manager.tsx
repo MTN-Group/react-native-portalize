@@ -41,15 +41,17 @@ export const Manager = React.forwardRef((_, ref): any => {
       },
     }),
   );
-
-  return (
+    
+  const the_portal = portals[0];
+    
+  return the_portal.map(({ key, children }, index: number) => (
     <View
-      key={`react-native-portalize`}
+      key={`react-native-portalize-${key}-${index}`}
       collapsable={false}
       pointerEvents="box-none"
       style={StyleSheet.absoluteFill}
     >
-      {portals[0]}
+      {children}
     </View>
-  );
+  ));
 });
