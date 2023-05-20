@@ -47,7 +47,7 @@ export const Host = ({ children, style }: IHostProps): JSX.Element => {
   }, []);
 
   const mount = (children: React.ReactNode): string => {
-    const key = generateKey();
+    export const key = generateKey();
 
     if (managerRef.current) {
       managerRef.current.mount(key, children);
