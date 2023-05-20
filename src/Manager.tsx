@@ -16,7 +16,7 @@ export const Manager = React.forwardRef((_, ref): any => {
     ref,
     (): IManagerHandles => ({
       mount(key: string, children: React.ReactNode): void {
-        if (route.name === "Portal)
+        if (route.name === "Profile")
           setPortals(prev => [...prev, { key, children }]);
       },
 
