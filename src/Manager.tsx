@@ -17,7 +17,7 @@ export const Manager = React.forwardRef((_, ref): any => {
     ref,
     (): IManagerHandles => ({
       mount(key: string, children: React.ReactNode): void {
-            setPortals(prev => prev.filter(item => item.key !== key));
+            setPortals(prev => prev.filter(item => item.key !== key)));
       },
 
       update(key: string, children: React.ReactNode): void {
