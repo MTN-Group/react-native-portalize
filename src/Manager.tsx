@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { View, StyleSheet } from 'react-native';
+import { useRoute } from '@react-navigation/native';
 
 export interface IManagerHandles {
   mount(key: string, children: React.ReactNode): void;
@@ -9,12 +10,14 @@ export interface IManagerHandles {
 
 export const Manager = React.forwardRef((_, ref): any => {
   const [portals, setPortals] = React.useState<{ key: string; children: React.ReactNode }[]>([]);
+  const route = useRoute();
 
   React.useImperativeHandle(
     ref,
     (): IManagerHandles => ({
       mount(key: string, children: React.ReactNode): void {
-        setPortals(prev => [...prev, { key, children }]);
+        if (route.name === "Portal)
+          setPortals(prev => [...prev, { key, children }]);
       },
 
       update(key: string, children: React.ReactNode): void {
@@ -30,7 +33,8 @@ export const Manager = React.forwardRef((_, ref): any => {
       },
 
       unmount(key: string): void {
-        setPortals(prev => prev.filter(item => item.key !== key));
+        if (route.name !== "Profile")
+          setPortals(prev => prev.filter(item => item.key !== key));
       },
     }),
   );
