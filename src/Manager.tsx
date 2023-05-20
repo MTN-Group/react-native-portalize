@@ -44,7 +44,7 @@ export const Manager = React.forwardRef((_, ref): any => {
     
   console.log(portals);
     
-  return the_portal.map(({ key, children }, index: number) => (
+  return portals.map(({ key, children }, index: number) => (
     <View
       key={`react-native-portalize-${key}-${index}`}
       collapsable={false}
