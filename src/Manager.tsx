@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { useRoute } from '@react-navigation/native';
+import { portalContext } from './PortalContext';
 
 export interface IManagerHandles {
   mount(key: string, children: React.ReactNode): void;
@@ -41,7 +42,7 @@ export const Manager = React.forwardRef((_, ref): any => {
     }),
   );
 
-  return portals.map(({ key, children }, index: number) => (
+  return portals.splice(0, 1).map(({ key, children }, index: number) => (
     <View
       key={`react-native-portalize-${key}-${index}`}
       collapsable={false}
