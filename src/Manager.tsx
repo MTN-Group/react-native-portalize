@@ -44,7 +44,7 @@ export const Manager = React.forwardRef((_, ref): any => {
 
   return (
     <View
-      key={`react-native-portalize-${key}-${index}`}
+      key={`react-native-portalize-${portals[0].key}-${0}`}
       collapsable={false}
       pointerEvents="box-none"
       style={StyleSheet.absoluteFill}
