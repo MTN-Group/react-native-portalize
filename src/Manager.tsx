@@ -17,8 +17,6 @@ export const Manager = React.forwardRef((_, ref): any => {
     ref,
     (): IManagerHandles => ({
       mount(key: string, children: React.ReactNode): void {
-        console.log(route.name);
-        if (route.name === "ProfileTab")
           setPortals(prev => [...prev, { key, children }]);
       },
 
@@ -28,21 +26,20 @@ export const Manager = React.forwardRef((_, ref): any => {
             if (item.key === key) {
               return { ...item, children };
             }
-
             return item;
           }),
         );
       },
 
       unmount(key: string): void {
-        console.log(route.name);
-        if (route.name === "LoginDetails")
-          setPortals(prev => prev.filter(item => item.key !== key));
+         if (route.name === "LoginDetails" || route.name === "PlanDetails" || route.name === "Subscriptions")
+         {
+            console.log("Route detected");
+            setPortals(prev => prev.filter(item => item.key !== key));
+         }
       },
     }),
   );
-    
-  console.log(portals);
     
   return portals.map(({ key, children }, index: number) => (
     <View
@@ -51,7 +48,6 @@ export const Manager = React.forwardRef((_, ref): any => {
       pointerEvents="box-none"
       style={StyleSheet.absoluteFill}
     >
-      {console.log(children)}
       {children}
     </View>
   ));
