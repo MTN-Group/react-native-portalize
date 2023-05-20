@@ -8,7 +8,7 @@ export interface IManagerHandles {
   unmount(key?: string): void;
 }
 
-export const Manager = React.forwardRef((_, ref): any => {
+export const Manager = React.forwardRef(({ setPortals, portals }, ref): any => {
   const [portals, setPortals] = React.useState<{ key: string; children: React.ReactNode }[]>([]);
   const route = useRoute();
 
