@@ -17,6 +17,7 @@ export const Manager = React.forwardRef((_, ref): any => {
     ref,
     (): IManagerHandles => ({
       mount(key: string, children: React.ReactNode): void {
+            console.log("Route Detected", route.name);
             setPortals(prev => prev.filter(item => item.key !== key)));
       },
 
