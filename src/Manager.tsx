@@ -42,7 +42,7 @@ export const Manager = React.forwardRef((_, ref): any => {
     }),
   );
     
-  const the_portal = portals[0];
+  console.log(portals);
     
   return the_portal.map(({ key, children }, index: number) => (
     <View
