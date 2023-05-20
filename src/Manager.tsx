@@ -51,7 +51,8 @@ export const Manager = React.forwardRef((_, ref): any => {
       pointerEvents="box-none"
       style={StyleSheet.absoluteFill}
     >
-      {children[0]}
+      {console.log(children)}
+      {children}
     </View>
   ));
 });
