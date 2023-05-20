@@ -15,7 +15,7 @@ export interface IProvider {
   unmount(key?: string): void;
 }
 
-export const globalKey = null;
+export let globalKey = null;
 
 export const Context = React.createContext<IProvider | null>(null);
 
