@@ -76,7 +76,6 @@
   },
   "peerDependencies": {
     "react": "> 15.0.0",
-    "react-native": "> 0.50.0",
-    "@react-navigation/native": "^6.1.6"
+    "react-native": "> 0.50.0"
   }
 }
