@@ -10,7 +10,6 @@ export interface IManagerHandles {
 
 export const Manager = React.forwardRef((_, ref): any => {
   const [portals, setPortals] = React.useState<{ key: string; children: React.ReactNode }[]>([]);
-  const route = useRoute();
 
   React.useImperativeHandle(
     ref,
