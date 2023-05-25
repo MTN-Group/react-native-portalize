@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { useRoute } from '@react-navigation/native';
 import { portalContext } from './PortalContext';
 
 export interface IManagerHandles {
@@ -17,7 +16,6 @@ export const Manager = React.forwardRef((_, ref): any => {
     ref,
     (): IManagerHandles => ({
       mount(key: string, children: React.ReactNode): void {
-            console.log("Route Detected", route.name);
              setPortals(prev => [...prev, { key, children }]);
       },
 
